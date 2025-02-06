@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Admin\MedicineController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -30,6 +31,9 @@ Route::get('/test', function(){
 });
 
 Route::inertia('patient', 'Patient/index');
+
+
+Route::resource('dashboard/medicine', MedicineController::class);
 
 
 require __DIR__.'/auth.php';

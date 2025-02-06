@@ -4,7 +4,8 @@ import FilterBar from '@/components/FilterBar/FilterBar'
 import DefaultLayout from '@/Layouts/DefaultLayout'
 import React from 'react'
 
-const index = () => {
+const index = ({medicines}) => {
+    console.log(medicines);
   return (
 
         <DefaultLayout>
@@ -15,8 +16,8 @@ const index = () => {
 
                 {/* medicine manage  */}
                 <div className='w-2/3 bg-white border shadow-md p-10'>
-                    <FilterBar />
-                    <TableThree />
+                    {/* <FilterBar /> */}
+                    <TableThree data={medicines}/>
 
                 </div>
                 {/* dose and dosetime manage */}

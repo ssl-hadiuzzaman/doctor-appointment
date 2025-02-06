@@ -27,7 +27,9 @@ const packageData: Package[] = [
   },
 ];
 
-const TableThree = () => {
+const TableThree = ({data}) => {
+
+    console.log(data)
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <div className="max-w-full overflow-x-auto">
@@ -49,30 +51,30 @@ const TableThree = () => {
             </tr>
           </thead>
           <tbody>
-            {packageData.map((packageItem, key) => (
+            {data.data.map((packageItem, key) => (
               <tr key={key}>
                 <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
                   <h5 className="font-medium text-black dark:text-white">
                     {packageItem.name}
                   </h5>
-                  <p className="text-sm">${packageItem.price}</p>
+                  {/* <p className="text-sm">${packageItem.price}</p> */}
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p className="text-black dark:text-white">
-                    {packageItem.invoiceDate}
+                    {packageItem.company}
                   </p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p
                     className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${
-                      packageItem.status === 'Paid'
+                      'Paid' === 'Paid'
                         ? 'bg-success text-success'
-                        : packageItem.status === 'Unpaid'
+                        : 'sdfsdf' === 'Unpaid'
                         ? 'bg-danger text-danger'
                         : 'bg-warning text-warning'
                     }`}
                   >
-                    {packageItem.status}
+                    {/* {packageItem.status} */}
                   </p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
